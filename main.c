@@ -12,6 +12,7 @@ int printMemories;
 int printUtil;
 
 int main (int argc, char const *argv[]) {
+  //debug
   for (int i = 2; i < argc; i++) {
     if (strcmp(argv[i], "-printReg") == 0) printReg = 1;
     if (strcmp(argv[i], "-printMemories") == 0) printMemories = 1;

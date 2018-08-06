@@ -1,10 +1,20 @@
+/*!
+ @header memory.h
+ 
+ @brief Códigos para a memória
+ 
+ @author André Lopes
+ @copyright  2018 André Lopes
+ @version    0.1
+ */
+
 #ifndef MEMORY_H
 #define MEMORY_H
 
 #define DATA_MEM_SIZE 100
 #define INST_MEM_SIZE 100
 
-/**
+/*!
  * Preenche os espaços da memória de instruções com a entrada do arquivo ou com 0
  * 
  * @param mem       Memória de instruções
@@ -13,7 +23,7 @@
  */
 int fillInstructionMemory(uint8_t mem[], const char *filename);
 
-/**
+/*!
  * Preenche os espaços da memória com 0
  * 
  * @param mem       Memória
@@ -21,7 +31,7 @@ int fillInstructionMemory(uint8_t mem[], const char *filename);
  */
 void fillMemory(uint8_t mem[], int size);
 
-/**
+/*!
  * Imprime o que tem na memoria de instruções em hexadecimal
  * 
  * @param mem       Memória a ser impressa
@@ -29,12 +39,20 @@ void fillMemory(uint8_t mem[], int size);
  */
 void printMemory(uint8_t mem[], int size);
 
-/**
+/*!
  * Imprime o que tem na memoria de dados em decimal
  * 
  * @param mem     Memória a ser impressa
  * @param size    Tamanho da memória
  */
 void printDataMemory(int8_t mem[], int size);
+
+/*!
+ * @brief String de bits para inteiro unsigned 
+ * 
+ * @param s           string de bits
+ * @return unsigned   inteiro convertido
+ */
+unsigned str2unsigned(char *s);
 
 #endif

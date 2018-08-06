@@ -7,12 +7,6 @@
 #define MASK3   0b00000000000000001111111100000000
 #define MASK4   0b00000000000000000000000011111111
 
-/**
- * String de bits para inteiro unsigned 
- * 
- * @param s           string de bits
- * @return unsigned   inteiro convertido
- */
 unsigned str2unsigned(char *s) {
   return (unsigned)strtoul(s, NULL, 2);
 }

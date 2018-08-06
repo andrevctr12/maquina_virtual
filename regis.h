@@ -1,10 +1,20 @@
+/*!
+ @header regis.h
+ 
+ @brief Banco de Registradores e Registradores Utilitários
+ 
+ @author André Lopes
+ @copyright  2018 André Lopes
+ @version    0.1
+ */
+
 #ifndef REGIS_H
 #define REGIS_H
 
 #include <stdlib.h>
 
-/**
- * Defines do numero do registrado com algo mais ludico
+/*!
+ * @brief Defines do numero do registrado com algo mais ludico
  */
 #define ZERO 0
 #define AT 1
@@ -21,18 +31,24 @@
 #define T8 24
 #define T9 25
 
-/**
- * Inicia o vetor de registradores
+/*!
+ * @brief Inicia o vetor de registradores
  * 
- * @param reg   registradores
+ * @param reg   Banco de registradores
  * @param size  tamanho do vetor
  */
 void initRegis(int32_t reg[], int size);
 
+/*!
+ * @brief Imprime os registradores do Banco de registradores
+ * 
+ * @param reg   Banco de registradores
+ * @param size  tamanho do vetor
+ */
 void printRegis(int32_t reg[], int size);
 
-/**
- * Registradores utilitários
+/*!
+ * @brief Registradores utilitários
  */
 typedef struct RegUtil {
   uint32_t PC;
@@ -52,6 +68,11 @@ typedef struct RegUtil {
   int32_t *WriteData;
 } RegUtil;
 
+/*!
+ * @brief Imprime o Registradores Utilitários
+ * 
+ * @param util  Registradores utilitários
+ */
 void printRegUtil(RegUtil util);
 
 #endif
