@@ -23,7 +23,7 @@ ControlUnit initializeControlUnit(Instruction i) {
   ControlUnit CUNT;
   switch (i.R.opcode) {
   case TYPE_R:
-    if (i.R.funct == 0b001000)
+    if (i.R.funct == FUNCTJR)
       initJR(&CUNT);
     else
       initTypeR(&CUNT);

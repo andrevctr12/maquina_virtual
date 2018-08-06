@@ -27,7 +27,6 @@ int fillInstructionMemory(uint8_t mem[], const char *filename) {
     for (mem32 = (unsigned*) mem; !feof(f); mem32++) {
       fscanf(f, "%s\n", in);
       *mem32 = str2unsigned(in);
-      printf("%08x\n", *mem32);
     }
     return 1;
   }
@@ -43,9 +42,16 @@ void fillMemory(uint8_t mem[], int size) {
 void printMemory(uint8_t mem[], int size) {
   unsigned *mem32;
   int i = 0;
-  printf("Memória:\n");
-  for (mem32 = (unsigned*) mem; *mem32 != 0 ; mem32++) {
+  printf("Memória de Instrução:\n");
+  for (mem32 = (unsigned*) mem; *mem32 != 0 ; mem32++, i += 4) {
     printf("[%2d]: %08x\n", i, *mem32);
-    i += 4;
+  }
+}
+
+void printDataMemory(int8_t mem[], int size) {
+  int32_t *mem32 = (int32_t*) mem;
+  printf("Memória de Dados:\n");
+  for (int i = 0 ; i < DATA_MEM_SIZE ; mem32++, i += 4) {
+    printf("[%2d]: %d\n", i, *mem32);
   }
 }

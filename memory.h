@@ -22,11 +22,19 @@ int fillInstructionMemory(uint8_t mem[], const char *filename);
 void fillMemory(uint8_t mem[], int size);
 
 /**
- * Mostra o que tem na memoria de instruções em hexadecimal
+ * Imprime o que tem na memoria de instruções em hexadecimal
  * 
  * @param mem       Memória a ser impressa
  * @param size      Tamanho da memória
  */
 void printMemory(uint8_t mem[], int size);
+
+/**
+ * Imprime o que tem na memoria de dados em decimal
+ * 
+ * @param mem     Memória a ser impressa
+ * @param size    Tamanho da memória
+ */
+void printDataMemory(int8_t mem[], int size);
 
 #endif

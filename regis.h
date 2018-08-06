@@ -29,6 +29,8 @@
  */
 void initRegis(int32_t reg[], int size);
 
+void printRegis(int32_t reg[], int size);
+
 /**
  * Registradores utilitários
  */
@@ -49,5 +51,7 @@ typedef struct RegUtil {
   int32_t ReadData2;
   int32_t *WriteData;
 } RegUtil;
+
+void printRegUtil(RegUtil util);
 
 #endif

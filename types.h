@@ -5,23 +5,12 @@
 #define TYPE_I 1
 #define TYPE_J 2
 
-#define LI    15
-#define LW    35
-#define SW    43
-#define BEQ   4
-#define BNE   5
-//      opcode    funct
-// add  000000    100000  R
-// sub  000000    100010  R
-// and  000000    100100  R
-// or   000000    100101  R
-// li   001111            I
-// lw   100011            I
-// sw   101011            I
-// beq  000100            I
-// bne  000101            I
-// j    000010            J
-// jr   000000    001000  R
+#define LI      15
+#define LW      35
+#define SW      43
+#define BEQ     4
+#define BNE     5
+#define FUNCTJR 0b001000
 
 typedef struct typeR_t {
     unsigned funct    : 6;
@@ -50,5 +39,7 @@ typedef union Instruction {
     typeJ J;
     unsigned raw;
 } Instruction;
+
+void printInstructionType(Instruction IR);
 
 #endif

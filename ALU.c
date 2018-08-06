@@ -2,8 +2,6 @@
 #include "ALU.h"
 
 unsigned ALUControlUnit(unsigned funct, unsigned ALUOp) {
-  printf("funct: %u\n", funct);
-  printf("ALUOp: %u\n", ALUOp);
   unsigned ALUOp0 = (ALUOp & 0b1);
   unsigned ALUOp1 = ((ALUOp & 0b10) >> 1);
 

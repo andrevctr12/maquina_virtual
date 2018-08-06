@@ -8,13 +8,10 @@
 int instructionFetch(uint8_t inst_mem[], RegUtil *util, Instruction *IR) {
   uint32_t *mem32 = (uint32_t*) &inst_mem[util->PC];
   if (!*mem32) return 0; ///< retorn 0 caso não tem mais instruções na memória
-  printf("[%00d] %08x\n", util->PC, *mem32); // debug
   // Inicializa o Registrador de Instrução com seu valor de 32bits
   IR->raw = *mem32;
-  printf("OPCODE : %d\n", IR->R.opcode);
-  printf("RS:      %d\n", IR->R.rs);
-  printf("RT:      %d\n", IR->R.rt);
-  printf("RD:      %d\n", IR->R.rd);
+  printf("[%2d] ", util->PC);  // debug
+  printInstructionType(*IR);   // debug
   // Incrementa PC
   util->PC += 4;
   return 1;
@@ -39,11 +36,10 @@ void instructionDecode(int32_t reg[], RegUtil *util, Instruction *IR, ControlUni
 
   // Calcula a operation da ALU de acordo com a funct e o ALUOp
   util->operation = ALUControlUnit(IR->R.funct, CUNT->ALUOp);
-  printf("operation: %u\n", util->operation); //debug
 
   // Calcula o sinal extendido do offset
   util->signExtended = (int) IR->I.offset;
-  printf("Sign Extended: %d\n", util->signExtended);
+  
   // Calcula o endereço de saida para caso seja Branch ou BNE
   util->ALUOutBranch = util->PC + (util->signExtended << 2);
 }
